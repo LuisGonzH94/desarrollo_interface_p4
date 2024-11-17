@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="toolbar-container position-fixed">
+        <div class="logo">
+            <!-- <span class="logo-desc">Leading Headlines Group</span> -->
+            <span>L</span>
+            <span>H</span>
+            <span>G</span>
+        </div>
+    </header>
+    <section>
+        <h1>The Best News Worldwide</h1>
+        <button id="anchor1" popovertarget="menuprincipal">Menú Principal</button>
+        <nav id="menu" class="menu">
+            <ul id="popover1" popover="manual">
+                <button popovertarget="menu" popovertargetaction="hide">X</button>
+                <li><a href="#" data-category="World News">World</a>
+                </li>
+                <li><a href="#" data-category="Sport">Sports</a>
+                </li>
+                <li><a href="#" data-category="Technology">Technology</a>
+                </li>
+                <li><a href="#" data-category="Entertainment">Entertainment</a>
+                </li>
+                <li><a href="#" data-category="Finance">Economy</a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+    <!-- Componente personalizado -->
+    <main>
+        <news-viewer></news-viewer>
+    </main>
+
+    <!-- Plantilla para un artículo -->
+    <template id="article-template">
+        <div class="article">
+            <h3 class="title"></h3>
+            <p><strong>Autor: </strong><span class="author"></span></p>
+            <p class="description clamp"></p>
+            <a class="read-more" href="#">Read more...</a>
+            <!-- <hr> -->
+        </div>
+    </template>
+
+    <script src="news-viewer.js"></script>
+</body>
+
+</html>
