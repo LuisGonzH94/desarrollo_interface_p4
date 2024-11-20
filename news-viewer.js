@@ -20,7 +20,7 @@ class NewsViewer extends HTMLElement {
       const response = await fetch(`${this.apiUrl}/${category}`);
       if (!response.ok) throw new Error('Error al obtener los artículos');
       
-      const articles = await response.json();
+      const articles = await response.json(); //EL QUE CONTIENE TODOS LOS DATOS
       this.renderArticles(articles);
     } catch (error) {
       console.error('Error:', error);

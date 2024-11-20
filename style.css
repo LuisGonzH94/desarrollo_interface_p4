@@ -33,31 +33,34 @@ body {
     }
 }
 
-ul::backdrop{
-  backdrop-filter: blur(3px);
-}
 
-ul:popover-open{
+[popover] {
   margin: 0;
   padding: 0;
-  list-style: none;
-  border: 1px solid #ccc;
+  border: 0;
+}
+[popover] {
+  border: 1px solid;
+  margin: .5rem;
   padding: 1rem;
   position: absolute;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 200px;
+  width: 10rem;
+  position-anchor: --anchor-menu;
+  position-area: --anchor-menu bottom right;
+  /* top: anchor(--anchor-menu bottom);*/ 
+  left: anchor(--anchor-menu right);
 }
 
+
 /*ESTILOS PARA EL MENÚ <nav> */
-.menu {
+#menu {
     ul {
         list-style: none;
         color: black;
-        display: flex;
+        /* display: flex;
         justify-content: center;
         align-items: center;
-        gap: 25px;
+        gap: 25px; */
     }
 
     a {
@@ -70,15 +73,24 @@ ul:popover-open{
     }
 }
 
-.menu a:hover {
+#menu a:hover {
     background-color: #ccc;
-    text-decoration: none;
+    padding: 0;
+}
+#anchor1 {
+  margin: 1rem;
+  padding: .5rem;
+  background-color: white;
+  color: black;
+  box-shadow: 14px 9px 7px -7px rgba(0,0,0,0.75); 
+  font-size: medium;
 }
 
-a.active {
+/* a.active {
     background-color: #04AA6D;
     color: white;
-}
+    padding: 0;
+} */
 
 h1 {
     text-align: center;
